@@ -45,7 +45,7 @@
                                         </state>
                                         <connections>
                                             <action selector="addNewLocationWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2UF-nw-HOQ"/>
-                                            <segue destination="j9v-ae-8Ih" kind="show" id="giZ-zO-3Y5"/>
+                                            <segue destination="j9v-ae-8Ih" kind="show" identifier="MapViewSegue" id="giZ-zO-3Y5"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XC6-QO-GFB">
@@ -123,10 +123,10 @@
             </objects>
             <point key="canvasLocation" x="972" y="-559.07046476761627"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="Nqu-8O-xLb">
             <objects>
-                <viewController id="j9v-ae-8Ih" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="j9v-ae-8Ih" customClass="MapViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Nfy-P7-Tgz"/>
                         <viewControllerLayoutGuide type="bottom" id="cKv-Wu-f8T"/>
@@ -163,6 +163,7 @@
                                         </state>
                                         <connections>
                                             <action selector="addNewLocationWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VOQ-KW-N6Y"/>
+                                            <action selector="doneWithSender:" destination="j9v-ae-8Ih" eventType="touchUpInside" id="n5Q-ok-cIO"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lx6-Fg-fwA">
@@ -176,6 +177,7 @@
                                             <color key="titleColor" red="0.25882352939999997" green="0.70980392160000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
+                                            <action selector="backActionWithSender:" destination="j9v-ae-8Ih" eventType="touchUpInside" id="0ZT-jf-TL2"/>
                                             <action selector="viewHelpWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wXz-96-TpX"/>
                                         </connections>
                                     </button>
@@ -197,6 +199,10 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="L7f-s1-QYX">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </mapView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Keu-Mc-PNj">
+                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                                <color key="color" red="0.29411764709999999" green="0.29411764709999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -205,10 +211,17 @@
                             <constraint firstAttribute="trailing" secondItem="hnv-wm-bHE" secondAttribute="trailing" id="Njl-zr-tP4"/>
                             <constraint firstItem="L7f-s1-QYX" firstAttribute="leading" secondItem="bJJ-tP-ILa" secondAttribute="leading" id="WA9-FW-5a8"/>
                             <constraint firstItem="hnv-wm-bHE" firstAttribute="top" secondItem="bJJ-tP-ILa" secondAttribute="top" id="iwo-Tg-ECN"/>
+                            <constraint firstItem="Keu-Mc-PNj" firstAttribute="centerX" secondItem="bJJ-tP-ILa" secondAttribute="centerX" id="jdU-qy-iu1"/>
                             <constraint firstItem="hnv-wm-bHE" firstAttribute="leading" secondItem="bJJ-tP-ILa" secondAttribute="leading" id="s8n-mk-4gg"/>
                             <constraint firstAttribute="trailing" secondItem="L7f-s1-QYX" secondAttribute="trailing" id="tQV-Ou-Kc6"/>
+                            <constraint firstItem="Keu-Mc-PNj" firstAttribute="centerY" secondItem="bJJ-tP-ILa" secondAttribute="centerY" id="wlX-3Y-tRl"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="Keu-Mc-PNj" id="1ij-EX-nYF"/>
+                        <outlet property="backButtonForNavControl" destination="Lx6-Fg-fwA" id="gil-YX-Z92"/>
+                        <outlet property="mapView" destination="L7f-s1-QYX" id="KwR-VE-BWH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WBj-DN-34p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

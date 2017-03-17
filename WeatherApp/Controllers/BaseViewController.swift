@@ -15,9 +15,6 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if self.backButtonForNavControl != nil {
-            self.backButtonForNavControl?.setTitle("<", for: .normal)
-        }
         
         if self.navigationController != nil {
             self.navigationController!.isNavigationBarHidden = false
@@ -31,7 +28,16 @@ class BaseViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func backAction(sender:UIButton) {
+        _ = self.navigationController?.popViewController(animated: true)
+    }
 
+    func showAlert(_ title:String, _ message:String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

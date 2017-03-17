@@ -7,8 +7,19 @@
 //
 
 import UIKit
+import MapKit
+
+protocol MapViewControllerDelegate {
+    func didSelectLocation()
+}
 
 class MapViewController: BaseViewController {
+    @IBOutlet weak var mapView:MKMapView?
+    @IBOutlet weak var activityIndicator:UIActivityIndicatorView?
+    
+    var mapViewControllerDelegate:MapViewControllerDelegate?
+    var coordinates:CLLocationCoordinate2D?
+    var annotationTitle = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +32,10 @@ class MapViewController: BaseViewController {
             }
         }
  */
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(MapViewController.addAnnotation(gestureRecognizer:)))
+        longPress.minimumPressDuration = 1.0
+        mapView?.addGestureRecognizer(longPress)
+        
         // Do any additional setup after loading the view.
     }
 
@@ -29,7 +44,62 @@ class MapViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //Method for adding annotation to show the user where he has clicked.
+    func addAnnotation(gestureRecognizer:UIGestureRecognizer) {
+        if self.mapView!.annotations.count > 0 {
+            self.mapView?.removeAnnotations(self.mapView!.annotations)
+        }
+        self.activityIndicator?.startAnimating()
+        
+        if gestureRecognizer.state == UIGestureRecognizerState.began {
+            let touchPoint = gestureRecognizer.location(in: mapView)
+            coordinates = mapView?.convert(touchPoint, toCoordinateFrom: mapView)
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = coordinates!
+            
+            CLGeocoder().reverseGeocodeLocation(CLLocation(latitude: (coordinates?.latitude)!, longitude: (coordinates?.longitude)!), completionHandler: { (placemarks, error) -> Void in
+                if error == nil {
+                    var placeMark: CLPlacemark!
 
+                    placeMark = placemarks?[0]
+                    if let city = placeMark.addressDictionary!["City"] as? String {
+                        self.annotationTitle = city
+                    }
+                    if let country = placeMark.addressDictionary!["Country"] as? String {
+                        if self.annotationTitle != "" {
+                            self.annotationTitle = self.annotationTitle + ", " + country
+                        } else {
+                            self.annotationTitle = country
+                        }
+                    }
+                    
+                    annotation.title = self.annotationTitle
+                    self.mapView?.addAnnotation(annotation)
+                    self.activityIndicator?.stopAnimating()
+                } else {
+                    self.activityIndicator?.stopAnimating()
+                    print("Reverse geocoder failed with error" + (error?.localizedDescription)!)
+                    return
+                }
+            })
+            
+            
+        }
+    }
+
+    //MARK: - Actions
+    @IBAction func done(sender:UIButton) {
+        if self.coordinates == nil || self.annotationTitle == "" {
+            self.showAlert("", "Please long press on the map to select a city.")
+        } else {
+            
+            //this means user has selected a valid city, store in in coredata. And reload the Home table.
+            BookMarkManager.sharedInstance.bookmarkCity(annotationTitle, String(describing: self.coordinates?.latitude), String(describing: self.coordinates?.longitude))
+            self.mapViewControllerDelegate?.didSelectLocation()
+            _ = self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
