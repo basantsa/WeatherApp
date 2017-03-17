@@ -8,20 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		BFC19F891E7C324E0022C371 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC19F881E7C324E0022C371 /* AppDelegate.swift */; };
-		BFC19F8B1E7C324E0022C371 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC19F8A1E7C324E0022C371 /* ViewController.swift */; };
 		BFC19F8E1E7C324F0022C371 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFC19F8C1E7C324F0022C371 /* Main.storyboard */; };
 		BFC19F901E7C324F0022C371 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC19F8F1E7C324F0022C371 /* Assets.xcassets */; };
 		BFC19F931E7C324F0022C371 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFC19F911E7C324F0022C371 /* LaunchScreen.storyboard */; };
+		BFC19F9F1E7C35CC0022C371 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC19F9E1E7C35CC0022C371 /* BaseViewController.swift */; };
+		BFC19FA21E7C35DE0022C371 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BFC19FA01E7C35DE0022C371 /* Model.xcdatamodeld */; };
+		BFC19FA41E7C36960022C371 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC19FA31E7C36960022C371 /* DatabaseManager.swift */; };
+		BFC19FA71E7C36CF0022C371 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC19FA61E7C36CF0022C371 /* CoreData.framework */; };
+		BFC19FA91E7C39BF0022C371 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC19FA81E7C39BF0022C371 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BFC19F851E7C324E0022C371 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFC19F881E7C324E0022C371 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BFC19F8A1E7C324E0022C371 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BFC19F8D1E7C324F0022C371 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BFC19F8F1E7C324F0022C371 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFC19F921E7C324F0022C371 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFC19F941E7C324F0022C371 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFC19F9E1E7C35CC0022C371 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		BFC19FA11E7C35DE0022C371 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		BFC19FA31E7C36960022C371 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		BFC19FA61E7C36CF0022C371 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		BFC19FA81E7C39BF0022C371 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFC19FA71E7C36CF0022C371 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +49,7 @@
 			children = (
 				BFC19F871E7C324E0022C371 /* WeatherApp */,
 				BFC19F861E7C324E0022C371 /* Products */,
+				BFC19FA51E7C36CF0022C371 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +64,57 @@
 		BFC19F871E7C324E0022C371 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				BFC19F9A1E7C35B50022C371 /* Controllers */,
+				BFC19F9B1E7C35B50022C371 /* Database */,
+				BFC19F9C1E7C35B50022C371 /* Network */,
+				BFC19F9D1E7C35B50022C371 /* Resources */,
 				BFC19F881E7C324E0022C371 /* AppDelegate.swift */,
-				BFC19F8A1E7C324E0022C371 /* ViewController.swift */,
 				BFC19F8C1E7C324F0022C371 /* Main.storyboard */,
 				BFC19F8F1E7C324F0022C371 /* Assets.xcassets */,
 				BFC19F911E7C324F0022C371 /* LaunchScreen.storyboard */,
 				BFC19F941E7C324F0022C371 /* Info.plist */,
 			);
 			path = WeatherApp;
+			sourceTree = "<group>";
+		};
+		BFC19F9A1E7C35B50022C371 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BFC19F9E1E7C35CC0022C371 /* BaseViewController.swift */,
+				BFC19FA81E7C39BF0022C371 /* HomeViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BFC19F9B1E7C35B50022C371 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				BFC19FA31E7C36960022C371 /* DatabaseManager.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		BFC19F9C1E7C35B50022C371 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		BFC19F9D1E7C35B50022C371 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BFC19FA01E7C35DE0022C371 /* Model.xcdatamodeld */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BFC19FA51E7C36CF0022C371 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BFC19FA61E7C36CF0022C371 /* CoreData.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +190,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFC19F8B1E7C324E0022C371 /* ViewController.swift in Sources */,
 				BFC19F891E7C324E0022C371 /* AppDelegate.swift in Sources */,
+				BFC19FA41E7C36960022C371 /* DatabaseManager.swift in Sources */,
+				BFC19F9F1E7C35CC0022C371 /* BaseViewController.swift in Sources */,
+				BFC19FA21E7C35DE0022C371 /* Model.xcdatamodeld in Sources */,
+				BFC19FA91E7C39BF0022C371 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,8 +358,22 @@
 				BFC19F991E7C324F0022C371 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BFC19FA01E7C35DE0022C371 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BFC19FA11E7C35DE0022C371 /* Model.xcdatamodel */,
+			);
+			currentVersion = BFC19FA11E7C35DE0022C371 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BFC19F7D1E7C324C0022C371 /* Project object */;
 }
