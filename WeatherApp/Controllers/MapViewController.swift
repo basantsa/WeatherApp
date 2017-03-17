@@ -33,7 +33,7 @@ class MapViewController: BaseViewController {
         }
  */
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(MapViewController.addAnnotation(gestureRecognizer:)))
-        longPress.minimumPressDuration = 1.0
+        longPress.minimumPressDuration = 0.5
         mapView?.addGestureRecognizer(longPress)
         
         // Do any additional setup after loading the view.
@@ -92,9 +92,7 @@ class MapViewController: BaseViewController {
         if self.coordinates == nil || self.annotationTitle == "" {
             self.showAlert("", "Please long press on the map to select a city.")
         } else {
-            
             //this means user has selected a valid city, store in in coredata. And reload the Home table.
-            //String(format: "%.2f", currentRatio)
             BookMarkManager.sharedInstance.bookmarkCity(annotationTitle, String(format:"%.2f", (self.coordinates?.latitude)!), String(format:"%.2f", (self.coordinates?.longitude)!))
             self.mapViewControllerDelegate?.didSelectLocation()
             _ = self.navigationController?.popViewController(animated: true)

@@ -98,7 +98,7 @@ class Forecast: NSObject {
         
         if let windDetails =  dict["wind"] as? Dictionary<String,Any> {
             if let windDegrees = windDetails["deg"] as? Double {
-                forecast.windDegrees = String(windDegrees)
+                forecast.windDegrees = String(format:"%.1f",windDegrees)
             }
             
             if let windSpeed = windDetails["speed"] as? Double {

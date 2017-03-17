@@ -46,7 +46,7 @@ class HomeViewController: BaseViewController, MapViewControllerDelegate, UITable
         if segue.identifier == "MapViewSegue" {
             let mapViewController = segue.destination as! MapViewController
             mapViewController.mapViewControllerDelegate = self
-        }
+        } 
     }
     
     
@@ -57,7 +57,11 @@ class HomeViewController: BaseViewController, MapViewControllerDelegate, UITable
     
     //MARK: - TableViewDataSource and Delegates
     public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 32
+        if self.bookmarkedCities.count > 0 {
+            return 32
+        } else {
+            return 0
+        }
     }
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -88,7 +92,10 @@ class HomeViewController: BaseViewController, MapViewControllerDelegate, UITable
         
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "CityViewController") as! CityViewController
+            controller.city = self.bookmarkedCities[indexPath.row]
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     

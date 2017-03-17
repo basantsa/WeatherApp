@@ -22,6 +22,7 @@
 		BFC19FB21E7C668B0022C371 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC19FB11E7C668B0022C371 /* MapKit.framework */; };
 		BFC19FB41E7C71520022C371 /* BookMarkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC19FB31E7C71520022C371 /* BookMarkManager.swift */; };
 		BFC19FB71E7C7D460022C371 /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC19FB61E7C7D460022C371 /* CityCell.swift */; };
+		BFC19FB91E7C86CB0022C371 /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC19FB81E7C86CB0022C371 /* CityViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		BFC19FB11E7C668B0022C371 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		BFC19FB31E7C71520022C371 /* BookMarkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookMarkManager.swift; sourceTree = "<group>"; };
 		BFC19FB61E7C7D460022C371 /* CityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
+		BFC19FB81E7C86CB0022C371 /* CityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				BFC19F9E1E7C35CC0022C371 /* BaseViewController.swift */,
 				BFC19FA81E7C39BF0022C371 /* HomeViewController.swift */,
 				BFC19FAF1E7C59660022C371 /* MapViewController.swift */,
+				BFC19FB81E7C86CB0022C371 /* CityViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				BFC19FB71E7C7D460022C371 /* CityCell.swift in Sources */,
 				BFC19FAE1E7C55160022C371 /* Forecast.swift in Sources */,
 				BFC19FA41E7C36960022C371 /* DatabaseManager.swift in Sources */,
+				BFC19FB91E7C86CB0022C371 /* CityViewController.swift in Sources */,
 				BFC19F9F1E7C35CC0022C371 /* BaseViewController.swift in Sources */,
 				BFC19FA21E7C35DE0022C371 /* Model.xcdatamodeld in Sources */,
 				BFC19FA91E7C39BF0022C371 /* HomeViewController.swift in Sources */,
