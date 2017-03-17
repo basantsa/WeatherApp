@@ -16,6 +16,9 @@
 		BFC19FA41E7C36960022C371 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC19FA31E7C36960022C371 /* DatabaseManager.swift */; };
 		BFC19FA71E7C36CF0022C371 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC19FA61E7C36CF0022C371 /* CoreData.framework */; };
 		BFC19FA91E7C39BF0022C371 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC19FA81E7C39BF0022C371 /* HomeViewController.swift */; };
+		BFC19FAB1E7C3DE10022C371 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC19FAA1E7C3DE10022C371 /* NetworkManager.swift */; };
+		BFC19FAE1E7C55160022C371 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC19FAD1E7C55160022C371 /* Forecast.swift */; };
+		BFC19FB01E7C59660022C371 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC19FAF1E7C59660022C371 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		BFC19FA31E7C36960022C371 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		BFC19FA61E7C36CF0022C371 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		BFC19FA81E7C39BF0022C371 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		BFC19FAA1E7C3DE10022C371 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		BFC19FAD1E7C55160022C371 /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
+		BFC19FAF1E7C59660022C371 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +86,10 @@
 		BFC19F9A1E7C35B50022C371 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BFC19FAC1E7C54DA0022C371 /* Model */,
 				BFC19F9E1E7C35CC0022C371 /* BaseViewController.swift */,
 				BFC19FA81E7C39BF0022C371 /* HomeViewController.swift */,
+				BFC19FAF1E7C59660022C371 /* MapViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -97,6 +105,7 @@
 		BFC19F9C1E7C35B50022C371 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				BFC19FAA1E7C3DE10022C371 /* NetworkManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -115,6 +124,14 @@
 				BFC19FA61E7C36CF0022C371 /* CoreData.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BFC19FAC1E7C54DA0022C371 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BFC19FAD1E7C55160022C371 /* Forecast.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,11 +207,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFC19FAB1E7C3DE10022C371 /* NetworkManager.swift in Sources */,
 				BFC19F891E7C324E0022C371 /* AppDelegate.swift in Sources */,
+				BFC19FAE1E7C55160022C371 /* Forecast.swift in Sources */,
 				BFC19FA41E7C36960022C371 /* DatabaseManager.swift in Sources */,
 				BFC19F9F1E7C35CC0022C371 /* BaseViewController.swift in Sources */,
 				BFC19FA21E7C35DE0022C371 /* Model.xcdatamodeld in Sources */,
 				BFC19FA91E7C39BF0022C371 /* HomeViewController.swift in Sources */,
+				BFC19FB01E7C59660022C371 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

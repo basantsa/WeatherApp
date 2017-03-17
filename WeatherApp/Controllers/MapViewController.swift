@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  MapViewController.swift
 //  WeatherApp
 //
 //  Created by Basant Sarda on 17/03/17.
@@ -8,21 +8,20 @@
 
 import UIKit
 
-class HomeViewController: BaseViewController {
+class MapViewController: BaseViewController {
 
-    @IBOutlet weak var noLocationsAvailable:UILabel?
-    @IBOutlet weak var cityListTableView:UITableView?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.cityListTableView?.tableFooterView = UIView()
-        
+
+        /*
         //for testing
         Forecast().getForecast("18.5204", "73.8567") { (success, forecast) in
             if success {
                 print(forecast!)
             }
         }
+ */
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,14 +39,5 @@ class HomeViewController: BaseViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    //MARK: - Actions
-    @IBAction func addNewLocation (sender:UIButton) {
-        
-    }
-    
-    @IBAction func viewHelp (sender:UIButton) {
-        
-    }
 
 }
