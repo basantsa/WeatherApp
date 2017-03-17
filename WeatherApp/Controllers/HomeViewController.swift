@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class HomeViewController: BaseViewController, MapViewControllerDelegate {
+class HomeViewController: BaseViewController, MapViewControllerDelegate, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var noLocationsAvailable:UILabel?
     @IBOutlet weak var cityListTableView:UITableView?
@@ -22,6 +22,12 @@ class HomeViewController: BaseViewController, MapViewControllerDelegate {
         notificationCenter.addObserver(self, selector: #selector(managedObjectContextDidSave), name: NSNotification.Name.NSManagedObjectContextDidSave, object: DatabaseManager.sharedInstance.persistentContainer.viewContext)
 
         self.bookmarkedCities = BookMarkManager.sharedInstance.fetchAllBookMarks()!
+        if self.bookmarkedCities.count > 0 {
+            self.noLocationsAvailable?.isHidden = true
+            self.cityListTableView?.reloadData()
+        } else {
+            self.noLocationsAvailable?.isHidden = false
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,13 +51,48 @@ class HomeViewController: BaseViewController, MapViewControllerDelegate {
     
     
     //MARK: - Actions
-    @IBAction func addNewLocation (sender:UIButton) {
-        
-    }
-    
     @IBAction func viewHelp (sender:UIButton) {
         
     }
+    
+    //MARK: - TableViewDataSource and Delegates
+    public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 32
+    }
+    
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
+
+    public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+            let sectionView = UIView()
+            let label = UILabel(frame: CGRect(x: 10, y: 0, width: self.view.frame.size.width - 10, height: 32))
+            label.textColor = UIColor(red: 42/255.0, green: 42/255.0, blue: 42/255.0, alpha: 1.0)
+            label.text = "Bookmarked Cities"
+            
+            sectionView.addSubview(label)
+            sectionView.backgroundColor = UIColor(red: 245/255.0, green: 245/255.0, blue: 245/255.0, alpha: 1.0)
+            return sectionView
+    }
+    
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.bookmarkedCities.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CityCell", for: indexPath) as! CityCell
+            cell.bookmarkedCity = self.bookmarkedCities[indexPath.row]
+            cell.designCell()
+            return cell
+    }
+        
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+    }
+    
+    
+    
     
     //MARK: - MapViewControllerDelegate
     func didSelectLocation() {
@@ -63,7 +104,10 @@ class HomeViewController: BaseViewController, MapViewControllerDelegate {
         print("data saved in coredata finally")
         self.showAlert("", "City bookmarked.")
         self.bookmarkedCities = BookMarkManager.sharedInstance.fetchAllBookMarks()!
-        print(self.bookmarkedCities.count)
+        if self.bookmarkedCities.count > 0 {
+            self.cityListTableView?.reloadData()
+            self.noLocationsAvailable?.isHidden = true
+        }
     }
 
 

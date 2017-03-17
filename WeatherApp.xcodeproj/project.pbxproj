@@ -21,6 +21,7 @@
 		BFC19FB01E7C59660022C371 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC19FAF1E7C59660022C371 /* MapViewController.swift */; };
 		BFC19FB21E7C668B0022C371 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC19FB11E7C668B0022C371 /* MapKit.framework */; };
 		BFC19FB41E7C71520022C371 /* BookMarkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC19FB31E7C71520022C371 /* BookMarkManager.swift */; };
+		BFC19FB71E7C7D460022C371 /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC19FB61E7C7D460022C371 /* CityCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		BFC19FAF1E7C59660022C371 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		BFC19FB11E7C668B0022C371 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		BFC19FB31E7C71520022C371 /* BookMarkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookMarkManager.swift; sourceTree = "<group>"; };
+		BFC19FB61E7C7D460022C371 /* CityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 		BFC19F9A1E7C35B50022C371 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BFC19FB51E7C7D320022C371 /* CustomCell */,
 				BFC19FAC1E7C54DA0022C371 /* Model */,
 				BFC19F9E1E7C35CC0022C371 /* BaseViewController.swift */,
 				BFC19FA81E7C39BF0022C371 /* HomeViewController.swift */,
@@ -139,6 +142,14 @@
 				BFC19FAD1E7C55160022C371 /* Forecast.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		BFC19FB51E7C7D320022C371 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				BFC19FB61E7C7D460022C371 /* CityCell.swift */,
+			);
+			path = CustomCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +227,7 @@
 			files = (
 				BFC19FAB1E7C3DE10022C371 /* NetworkManager.swift in Sources */,
 				BFC19F891E7C324E0022C371 /* AppDelegate.swift in Sources */,
+				BFC19FB71E7C7D460022C371 /* CityCell.swift in Sources */,
 				BFC19FAE1E7C55160022C371 /* Forecast.swift in Sources */,
 				BFC19FA41E7C36960022C371 /* DatabaseManager.swift in Sources */,
 				BFC19F9F1E7C35CC0022C371 /* BaseViewController.swift in Sources */,

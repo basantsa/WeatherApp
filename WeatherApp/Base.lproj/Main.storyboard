@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -44,7 +45,6 @@
                                             <color key="titleColor" red="0.25882352939999997" green="0.70980392160000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="addNewLocationWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2UF-nw-HOQ"/>
                                             <segue destination="j9v-ae-8Ih" kind="show" identifier="MapViewSegue" id="giZ-zO-3Y5"/>
                                         </connections>
                                     </button>
@@ -52,7 +52,7 @@
                                         <rect key="frame" x="14" y="33" width="22" height="22"/>
                                         <color key="tintColor" red="0.25882352939999997" green="0.70980392160000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <action selector="viewHelpWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jin-p9-eEg"/>
+                                            <action selector="viewHelpWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3d4-F2-EpF"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -70,28 +70,57 @@
                                     <constraint firstItem="85j-DK-Qvd" firstAttribute="top" secondItem="a10-xJ-L8f" secondAttribute="bottom" constant="8" id="zFW-3z-zeA"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gwU-PV-vt1">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gwU-PV-vt1">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CityCell" id="8FW-ja-9cl">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CityCell" rowHeight="60" id="8FW-ja-9cl" customClass="CityCell" customModule="WeatherApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8FW-ja-9cl" id="hJY-Ds-c71">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="City Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9x-qP-dG5">
-                                                    <rect key="frame" x="17" y="11" width="80" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9x-qP-dG5">
+                                                    <rect key="frame" x="17" y="12" width="80" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.29411764709999999" green="0.29411764709999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lat: 73.81" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7eg-4h-4G5">
+                                                    <rect key="frame" x="18" y="40" width="52" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.29411764709999999" green="0.29411764709999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="long: 121.21" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVs-dK-dWt">
+                                                    <rect key="frame" x="82" y="40" width="66" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.29411764709999999" green="0.29411764709999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="rVs-dK-dWt" secondAttribute="bottom" constant="4" id="0Ta-LO-iZk"/>
+                                                <constraint firstAttribute="bottom" secondItem="7eg-4h-4G5" secondAttribute="bottom" constant="4" id="2ME-kq-7GJ"/>
+                                                <constraint firstItem="7eg-4h-4G5" firstAttribute="leading" secondItem="hJY-Ds-c71" secondAttribute="leading" constant="18" id="4Gb-Fe-cCh"/>
+                                                <constraint firstItem="D9x-qP-dG5" firstAttribute="top" secondItem="hJY-Ds-c71" secondAttribute="topMargin" constant="3.5" id="L3R-QJ-xq9"/>
+                                                <constraint firstItem="rVs-dK-dWt" firstAttribute="leading" secondItem="7eg-4h-4G5" secondAttribute="trailing" constant="12" id="dQj-JC-uL7"/>
+                                                <constraint firstItem="D9x-qP-dG5" firstAttribute="leading" secondItem="hJY-Ds-c71" secondAttribute="leadingMargin" constant="9" id="luo-Aa-6I7"/>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="D9x-qP-dG5" secondAttribute="trailing" id="n8L-Kb-PIR"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cityName" destination="D9x-qP-dG5" id="iYu-AA-W5O"/>
+                                            <outlet property="latLabel" destination="7eg-4h-4G5" id="jkm-fw-gD7"/>
+                                            <outlet property="longLabel" destination="rVs-dK-dWt" id="u5q-NU-wi0"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="aCV-jE-8pK"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ahS-fD-PSS"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click on &quot;+&quot; to bookmark new Cities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nd6-n1-W9i">
                                 <rect key="frame" x="50.5" y="323" width="274.5" height="21"/>
@@ -162,7 +191,6 @@
                                             <color key="titleColor" red="0.25882352939999997" green="0.70980392160000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="addNewLocationWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VOQ-KW-N6Y"/>
                                             <action selector="doneWithSender:" destination="j9v-ae-8Ih" eventType="touchUpInside" id="n5Q-ok-cIO"/>
                                         </connections>
                                     </button>
@@ -178,7 +206,6 @@
                                         </state>
                                         <connections>
                                             <action selector="backActionWithSender:" destination="j9v-ae-8Ih" eventType="touchUpInside" id="0ZT-jf-TL2"/>
-                                            <action selector="viewHelpWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wXz-96-TpX"/>
                                         </connections>
                                     </button>
                                 </subviews>

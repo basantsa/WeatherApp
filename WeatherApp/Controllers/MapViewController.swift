@@ -94,7 +94,8 @@ class MapViewController: BaseViewController {
         } else {
             
             //this means user has selected a valid city, store in in coredata. And reload the Home table.
-            BookMarkManager.sharedInstance.bookmarkCity(annotationTitle, String(describing: self.coordinates?.latitude), String(describing: self.coordinates?.longitude))
+            //String(format: "%.2f", currentRatio)
+            BookMarkManager.sharedInstance.bookmarkCity(annotationTitle, String(format:"%.2f", (self.coordinates?.latitude)!), String(format:"%.2f", (self.coordinates?.longitude)!))
             self.mapViewControllerDelegate?.didSelectLocation()
             _ = self.navigationController?.popViewController(animated: true)
         }
