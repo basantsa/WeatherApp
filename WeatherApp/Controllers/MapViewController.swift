@@ -76,6 +76,8 @@ class MapViewController: BaseViewController {
                     annotation.title = self.annotationTitle
                     self.mapView?.addAnnotation(annotation)
                     self.activityIndicator?.stopAnimating()
+                    
+                    self.showAlert("", "Location selected: " + self.annotationTitle)
                 } else {
                     self.activityIndicator?.stopAnimating()
                     print("Reverse geocoder failed with error" + (error?.localizedDescription)!)

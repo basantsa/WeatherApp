@@ -46,9 +46,11 @@ class CityViewController: BaseViewController {
                         self.weatherInfo?.text = "-"
                     }
                     
-                    let tempRangeMin = " (" + (forecast?.temp_min)! + " - "
-                    let tempMaxRange = (forecast?.temp_min)! + ")"
-                    self.temperatureLabel?.text = (forecast?.temp)! + tempRangeMin + tempMaxRange
+                   // let tempRangeMin = " (" + (forecast?.temp_min)! + " - "
+                   // let tempMaxRange = (forecast?.temp_min)! + ")"
+                    
+                    self.temperatureLabel?.text = (forecast?.temp)! + " ℃"
+                        //+ tempRangeMin + tempMaxRange
                     
                     if forecast?.humidity != nil {
                         self.humidityLabel?.text = forecast?.humidity
@@ -57,7 +59,7 @@ class CityViewController: BaseViewController {
                     }
                     self.rainChanceLabel?.text = forecast?.weatherDesc
                     if forecast?.windSpeed != nil && forecast?.windDegrees != nil {
-                        self.windInfo?.text = (forecast?.windSpeed)! + " @ " + (forecast?.windDegrees)! + " degrees"
+                        self.windInfo?.text = (forecast?.windSpeed)! + "kn @ " + (forecast?.windDegrees)! + "°"
                     } else {
                         self.windInfo?.text = "-"
                     }
