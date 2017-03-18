@@ -66,4 +66,18 @@ class BookMarkManager: NSObject {
             }
             
         }
+    
+    func removeCityFromBookmark(_ bookmarkedCity: BookMarkedCity) {
+        let managedContext = DatabaseManager.sharedInstance.persistentContainer.viewContext
+        managedContext.delete(bookmarkedCity)
+        
+        /*
+        do {
+            try managedContext.save()
+            print("saved!")
+        } catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
+        }
+ */
+    }
 }

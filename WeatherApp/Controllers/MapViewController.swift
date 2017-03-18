@@ -14,7 +14,14 @@ protocol MapViewControllerDelegate {
 }
 
 class MapViewController: BaseViewController {
-    @IBOutlet weak var mapView:MKMapView?
+    @IBOutlet weak var mapView:MKMapView? {
+        didSet {
+            let puneLocation = CLLocationCoordinate2DMake(18.5204, 73.8567)
+            let viewRegion = MKCoordinateRegionMakeWithDistance(puneLocation, 200000, 200000)
+            self.mapView?.setRegion(viewRegion, animated: false)
+        }
+    }
+    
     @IBOutlet weak var activityIndicator:UIActivityIndicatorView?
     
     var mapViewControllerDelegate:MapViewControllerDelegate?

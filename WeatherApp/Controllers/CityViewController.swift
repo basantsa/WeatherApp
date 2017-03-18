@@ -46,11 +46,7 @@ class CityViewController: BaseViewController {
                         self.weatherInfo?.text = "-"
                     }
                     
-                   // let tempRangeMin = " (" + (forecast?.temp_min)! + " - "
-                   // let tempMaxRange = (forecast?.temp_min)! + ")"
-                    
                     self.temperatureLabel?.text = (forecast?.temp)! + " ℃"
-                        //+ tempRangeMin + tempMaxRange
                     
                     if forecast?.humidity != nil {
                         self.humidityLabel?.text = forecast?.humidity

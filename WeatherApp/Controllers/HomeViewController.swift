@@ -98,6 +98,17 @@ class HomeViewController: BaseViewController, MapViewControllerDelegate, UITable
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // remove the item from the data model
+            BookMarkManager.sharedInstance.removeCityFromBookmark(self.bookmarkedCities[indexPath.row])
+
+            self.bookmarkedCities.remove(at: indexPath.row)
+            
+            // delete the table view row
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
     
     
     

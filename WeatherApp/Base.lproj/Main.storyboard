@@ -288,7 +288,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="o3w-og-oYD">
-                                <rect key="frame" x="38" y="104" width="300" height="263"/>
+                                <rect key="frame" x="38" y="94" width="300" height="263"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="V9i-aY-eve">
                                         <rect key="frame" x="0.0" y="0.0" width="242" height="263"/>
@@ -402,7 +402,7 @@
                             <constraint firstItem="HVz-OC-NcU" firstAttribute="centerY" secondItem="RDt-kT-KPa" secondAttribute="centerY" id="3hB-9E-f7o"/>
                             <constraint firstAttribute="trailing" secondItem="6Il-3H-2Ag" secondAttribute="trailing" id="3sb-1G-isV"/>
                             <constraint firstItem="6Il-3H-2Ag" firstAttribute="leading" secondItem="RDt-kT-KPa" secondAttribute="leading" id="6gZ-V6-3tA"/>
-                            <constraint firstItem="o3w-og-oYD" firstAttribute="top" secondItem="6Il-3H-2Ag" secondAttribute="bottom" constant="40" id="RPs-EO-Jpl"/>
+                            <constraint firstItem="o3w-og-oYD" firstAttribute="top" secondItem="6Il-3H-2Ag" secondAttribute="bottom" constant="30" id="RPs-EO-Jpl"/>
                             <constraint firstItem="6Il-3H-2Ag" firstAttribute="top" secondItem="RDt-kT-KPa" secondAttribute="top" id="bZN-Bu-Vza"/>
                             <constraint firstItem="o3w-og-oYD" firstAttribute="centerX" secondItem="RDt-kT-KPa" secondAttribute="centerX" id="oZO-zX-qUS"/>
                             <constraint firstItem="HVz-OC-NcU" firstAttribute="centerX" secondItem="RDt-kT-KPa" secondAttribute="centerX" id="xK7-dk-4X8"/>
