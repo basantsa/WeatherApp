@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 
+//MARK: - This is a singleton class which handles all the operations relating to fetching, adding and deleting bookmarked cities from Coredata.
+
 class BookMarkManager: NSObject {
     static let sharedInstance = BookMarkManager()
 
@@ -70,14 +72,5 @@ class BookMarkManager: NSObject {
     func removeCityFromBookmark(_ bookmarkedCity: BookMarkedCity) {
         let managedContext = DatabaseManager.sharedInstance.persistentContainer.viewContext
         managedContext.delete(bookmarkedCity)
-        
-        /*
-        do {
-            try managedContext.save()
-            print("saved!")
-        } catch let error as NSError  {
-            print("Could not save \(error), \(error.userInfo)")
-        }
- */
     }
 }

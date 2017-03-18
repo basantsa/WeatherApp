@@ -8,6 +8,9 @@
 
 import UIKit
 
+//MARK: - This is a singleton class which handles all the network fetch operations.
+
+
 class NetworkManager: NSObject {
     
     static let sharedInstance = NetworkManager()
@@ -35,6 +38,7 @@ class NetworkManager: NSObject {
             
             if let error = error {
                 print(error.localizedDescription)
+                failure(error as NSError?)
             } else if let httpResponse = response as? HTTPURLResponse {
                 if httpResponse.statusCode == 200 {
                     success(data!)

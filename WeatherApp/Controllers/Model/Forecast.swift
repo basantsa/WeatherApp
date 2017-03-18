@@ -30,7 +30,7 @@ class Forecast: NSObject {
     var cityName:String?
     
     
-    func getForecast (_ latitude:String, _ longitude:String,completion : @escaping (_ success:Bool,_ forecast: Forecast?)-> Void)  {
+    func getForecast (_ latitude:String, _ longitude:String,completion : @escaping (_ success:Bool,_ forecast: Forecast?, _ error:NSError?)-> Void)  {
         
         let url = "http://api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon=" + longitude + "&appid=c6e381d8c7ff98f0fee43775817cf6ad&units=metric"
         
@@ -38,15 +38,16 @@ class Forecast: NSObject {
             do {
                 let json = try JSONSerialization.jsonObject(with: response, options: []) as! Dictionary<String, Any>
                 print(json)
-                completion(true,self.parseForecastDict(dict: json))
+                completion(true,self.parseForecastDict(dict: json), nil)
                 
             } catch let error as NSError {
                 print("Failed to load: \(error.localizedDescription)")
-                completion(false, nil)
+                completion(false, nil, error)
             }
         }) { (error) in
             if error != nil {
                 print(error!.description)
+                completion(false, nil, error)
             }
         }
     }

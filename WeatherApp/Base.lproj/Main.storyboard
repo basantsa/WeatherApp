@@ -182,13 +182,13 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nuq-we-NUy">
-                                        <rect key="frame" x="11" y="25" width="43" height="34"/>
+                                        <rect key="frame" x="11" y="25" width="50" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="Koj-oV-kkH"/>
-                                            <constraint firstAttribute="width" constant="43" id="gdY-P6-pjp"/>
+                                            <constraint firstAttribute="width" constant="50" id="gdY-P6-pjp"/>
                                         </constraints>
                                         <color key="tintColor" red="0.25882352939999997" green="0.70980392160000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="close">
+                                        <state key="normal" title="Close">
                                             <color key="titleColor" red="0.25882352939999997" green="0.70980392160000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
@@ -265,9 +265,9 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pAQ-n7-6eb">
-                                        <rect key="frame" x="11" y="25" width="43" height="34"/>
+                                        <rect key="frame" x="11" y="25" width="46" height="34"/>
                                         <color key="tintColor" red="0.25882352939999997" green="0.70980392160000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="close">
+                                        <state key="normal" title="Close">
                                             <color key="titleColor" red="0.25882352939999997" green="0.70980392160000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>

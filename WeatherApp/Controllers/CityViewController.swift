@@ -35,7 +35,7 @@ class CityViewController: BaseViewController {
     
     func fetchData() {
         self.activityIndicator?.startAnimating()
-        Forecast().getForecast(city.latitude!, city.longitude!) { (success, forecast) in
+        Forecast().getForecast(city.latitude!, city.longitude!) { (success, forecast, error) in
             DispatchQueue.main.async {
                 if success {
                     print(forecast!)
@@ -49,7 +49,7 @@ class CityViewController: BaseViewController {
                     self.temperatureLabel?.text = (forecast?.temp)! + " ℃"
                     
                     if forecast?.humidity != nil {
-                        self.humidityLabel?.text = forecast?.humidity
+                        self.humidityLabel?.text = (forecast?.humidity)! + "%"
                     } else {
                         self.humidityLabel?.text = "-"
                     }
@@ -61,7 +61,11 @@ class CityViewController: BaseViewController {
                     }
                 }
                 else {
-                    self.showAlert("", "Unable to fetch weather details.")
+                    if error != nil {
+                            self.showAlert("", (error?.localizedDescription)!)
+                    } else {
+                        self.showAlert("", "Unable to fetch weather details.")
+                    }
                 }
                 self.activityIndicator?.stopAnimating()
             }

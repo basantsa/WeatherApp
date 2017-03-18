@@ -88,6 +88,9 @@ class MapViewController: BaseViewController {
                 } else {
                     self.activityIndicator?.stopAnimating()
                     print("Reverse geocoder failed with error" + (error?.localizedDescription)!)
+                    self.showAlert("", "Cant fetch details right now.")
+                    self.activityIndicator?.stopAnimating()
+
                     return
                 }
             })
