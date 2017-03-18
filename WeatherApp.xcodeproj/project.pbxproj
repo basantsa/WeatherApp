@@ -23,6 +23,9 @@
 		BFC19FB41E7C71520022C371 /* BookMarkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC19FB31E7C71520022C371 /* BookMarkManager.swift */; };
 		BFC19FB71E7C7D460022C371 /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC19FB61E7C7D460022C371 /* CityCell.swift */; };
 		BFC19FB91E7C86CB0022C371 /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC19FB81E7C86CB0022C371 /* CityViewController.swift */; };
+		BFC19FBB1E7D207A0022C371 /* weatherApp.html in Resources */ = {isa = PBXBuildFile; fileRef = BFC19FBA1E7D207A0022C371 /* weatherApp.html */; };
+		BFC19FBD1E7D20BC0022C371 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC19FBC1E7D20BC0022C371 /* HelpViewController.swift */; };
+		BFC19FBF1E7D266E0022C371 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC19FBE1E7D266D0022C371 /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,9 @@
 		BFC19FB31E7C71520022C371 /* BookMarkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookMarkManager.swift; sourceTree = "<group>"; };
 		BFC19FB61E7C7D460022C371 /* CityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
 		BFC19FB81E7C86CB0022C371 /* CityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
+		BFC19FBA1E7D207A0022C371 /* weatherApp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = weatherApp.html; sourceTree = "<group>"; };
+		BFC19FBC1E7D20BC0022C371 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		BFC19FBE1E7D266D0022C371 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFC19FBF1E7D266E0022C371 /* WebKit.framework in Frameworks */,
 				BFC19FB21E7C668B0022C371 /* MapKit.framework in Frameworks */,
 				BFC19FA71E7C36CF0022C371 /* CoreData.framework in Frameworks */,
 			);
@@ -101,6 +108,7 @@
 				BFC19FA81E7C39BF0022C371 /* HomeViewController.swift */,
 				BFC19FAF1E7C59660022C371 /* MapViewController.swift */,
 				BFC19FB81E7C86CB0022C371 /* CityViewController.swift */,
+				BFC19FBC1E7D20BC0022C371 /* HelpViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -126,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				BFC19FA01E7C35DE0022C371 /* Model.xcdatamodeld */,
+				BFC19FBA1E7D207A0022C371 /* weatherApp.html */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -133,6 +142,7 @@
 		BFC19FA51E7C36CF0022C371 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BFC19FBE1E7D266D0022C371 /* WebKit.framework */,
 				BFC19FB11E7C668B0022C371 /* MapKit.framework */,
 				BFC19FA61E7C36CF0022C371 /* CoreData.framework */,
 			);
@@ -218,6 +228,7 @@
 				BFC19F931E7C324F0022C371 /* LaunchScreen.storyboard in Resources */,
 				BFC19F901E7C324F0022C371 /* Assets.xcassets in Resources */,
 				BFC19F8E1E7C324F0022C371 /* Main.storyboard in Resources */,
+				BFC19FBB1E7D207A0022C371 /* weatherApp.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +246,7 @@
 				BFC19FA41E7C36960022C371 /* DatabaseManager.swift in Sources */,
 				BFC19FB91E7C86CB0022C371 /* CityViewController.swift in Sources */,
 				BFC19F9F1E7C35CC0022C371 /* BaseViewController.swift in Sources */,
+				BFC19FBD1E7D20BC0022C371 /* HelpViewController.swift in Sources */,
 				BFC19FA21E7C35DE0022C371 /* Model.xcdatamodeld in Sources */,
 				BFC19FA91E7C39BF0022C371 /* HomeViewController.swift in Sources */,
 				BFC19FB41E7C71520022C371 /* BookMarkManager.swift in Sources */,
